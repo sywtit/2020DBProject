@@ -10,7 +10,11 @@
   "dependencies": {
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
+    "swiper": "^6.4.1",
     "vue": "^2.6.11",
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-carousel-3d": "^1.0.1",
+    "vue-router": "^3.4.9",
     "vue-splitpane": "^1.0.6",
     "vuetify": "^2.2.11"
   },

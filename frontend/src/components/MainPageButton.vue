@@ -29,7 +29,8 @@
     <!-- </v-row> -->
   </v-container>
       <v-btn flat id="buttonLeft"
-         color="transparent">
+         color="transparent"
+         v-on:click="MyCinemaLink">
          My Cinema
        </v-btn>
 </section>
@@ -48,6 +49,9 @@
        scrollValue : Number
     },
     methods:{
+      MyCinemaLink: function (){
+         this.$router.push('/myCinema')
+     }
     },
   watch: {
       scrollValue: function () {
