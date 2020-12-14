@@ -50,7 +50,7 @@
     },
     methods:{
       MyCinemaLink: function (){
-         this.$router.push('/myCinema')
+         this.$router.push('/myCinema');
      }
     },
   watch: {

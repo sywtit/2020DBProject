@@ -38,6 +38,15 @@
 import LikeToSee from '../components/MyCinema/LikeToSee'
 import OwnMovies from '../components/MyCinema/OwnMovies'
 
+// if (location.href.indexOf('#reload') == -1)
+//   location.href += '#reload'
+//  window.onload = function() {
+//     if (!window.location.hash) {
+//         window.location = window.location + '#loaded';
+//         window.location.reload();
+//     }
+// }
+
 export default {
     name: 'MyCinemaPage',
     components:{
@@ -49,6 +58,11 @@ export default {
          this.$router.push('/Home')
      }
     },
+    // beforeMount(){
+    //   this.$nextTick(function () {
+    //   location.reload();     
+    // })
+    
       
 }
 </script>

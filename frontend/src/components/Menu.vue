@@ -25,19 +25,15 @@
           v-model="group"
         >
           <v-list-item>
-            <v-list-item-title>Foo</v-list-item-title>
+            <v-list-item-title>My Cinema</v-list-item-title>
           </v-list-item>
 
           <v-list-item>
-            <v-list-item-title>Bar</v-list-item-title>
+            <v-list-item-title>Movie Rental Shop</v-list-item-title>
           </v-list-item>
 
           <v-list-item>
-            <v-list-item-title>Fizz</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title>Buzz</v-list-item-title>
+            <v-list-item-title>My Account</v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>

@@ -15,14 +15,24 @@ import { Carousel3d, Slide } from 'vue-carousel-3d';
 export default {
     name: 'LikeToSee',
     data: () => ({
-      slides: 5
+      slides: 5,
     }),
     components: {
         // 'carousel-3d': window['carousel-3d'].Carousel3d,
         // 'slide': window['carousel-3d'].Slide
         Carousel3d,
         Slide
-    }
+    },
+//     methods:{
+//         loadOnce:function(){
+//         location.reload();
+//         }
+//   },
+     methods:{
+         },
+  created(){
+    
+  }
       
 }
 </script>

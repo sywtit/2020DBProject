@@ -30,7 +30,6 @@
     </v-card-text>
   </v-card>
     </v-col>
-      <!-- <modal v-if="showModal" @close="showModal = false"> -->
           <app-my-modal
           title="This is modal"
           :visible.sync="visible">
