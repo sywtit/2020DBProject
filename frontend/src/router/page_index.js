@@ -16,6 +16,9 @@ const MyCinemaPage = () => {
 const MyAccountPage = () => {
     return import ('../views/MyAccountPage.vue')
 }
+const MovieRentalShopPage = () => {
+    return import ('../views/MovieRentalShopPage.vue')
+}
 const vueRouter = new VueRouter({
     mode: 'history',
     base: process.env.BASE_URL,
@@ -25,7 +28,7 @@ const vueRouter = new VueRouter({
             component: MainPage
         },
         {
-            path: '/login',
+            path: '/',
             name: 'LoginPage',
             component: LoginPage
         },
@@ -38,6 +41,11 @@ const vueRouter = new VueRouter({
             path: '/myAccount',
             name: 'MyAccountPage',
             component: MyAccountPage
+        },
+        {
+            path: '/movieRentalShop',
+            name: 'MovieRentalShopPage',
+            component: MovieRentalShopPage
         }
         // { path: '*', component: NotFoundComponent }
     ]

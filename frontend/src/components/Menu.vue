@@ -28,7 +28,7 @@
             <v-list-item-title>My Cinema</v-list-item-title>
           </v-list-item>
 
-          <v-list-item>
+          <v-list-item v-on:click ="MovieRentalShop">
             <v-list-item-title>Movie Rental Shop</v-list-item-title>
           </v-list-item>
 
@@ -91,6 +91,9 @@ export default {
      },
     MyCinema: function(){
       this.$router.push('/myCinema')
+    },
+    MovieRentalShop: function(){
+      this.$router.push('/movieRentalShop')
     }
 
   }

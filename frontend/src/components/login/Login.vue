@@ -1,10 +1,12 @@
 <template>
      <div class="pa-3">
-                    <v-text-field v-model="identity" label="아이디를 입력하세요">
+                    <v-text-field v-model="email" label="email" type="email">
                     </v-text-field>
-                    <v-text-field v-model="password" label="패스워드를 입력하세요" type="password">
+                    <v-text-field v-model="password" label="password" type="password">
                     </v-text-field>
-                    <v-btn class="black white--text" depressed block large @click="login({ identity, password })">
+                    <v-btn class="black white--text" depressed block large 
+                    top = "40px"
+                    @click="login">
                         LOGIN
                     </v-btn>
                 </div>
@@ -13,6 +15,16 @@
 <script>
 export default {
     name: 'Login'
+    ,
+    data: () => ({
+        email: null,
+        password: null,
+    }),
+    methods:{
+        login: function(){
+            this.$router.push('/Home');
+        }
+    }
 }
 </script>
 

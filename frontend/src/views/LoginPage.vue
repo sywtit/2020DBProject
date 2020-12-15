@@ -6,55 +6,29 @@
             tile
             id="loginCard"
             >
-              <v-tabs
-                v-model="tab"
-                background-color="transparent"
-                color="basil"
-                grow>
-                <v-tab
-                    v-for="item in items"
-                    :key="item"
-                >
-                 {{ item }}
-                </v-tab>
-              </v-tabs>
-         <!-- @click.prevent='setComponent("register")'>Register -->
-
-               <v-tabs-items v-model="tab">
-                <v-tab-item
-                    v-for="item in items"
-                    :key="item"
-                >
-                    <v-card
-                    color="basil"
-                    flat
-                    >
-                    <!-- {{content.Components}} -->
-                </v-card>
-            </v-tab-item>
-            </v-tabs-items>
-
+            <b-tabs content-class="mt-3" id="tab" justified>
+              <b-tab title="Login" active><p><Login/></p></b-tab>
+              <b-tab title="Sign Up"><p><SignUp/></p></b-tab>
+            </b-tabs>
             </v-card>
     </v-app>
 </template>
 
 <script>
-// import Login from '../components/login/Login'
-
+import Login from '../components/login/Login'
+import SignUp from '../components/login/SignUp'
 export default {
     name: 'LoginPage',
     data () {
         return {
-            tab: null,
-            items: [
-            'Login', 'Sign Up'
-            ],
             // content : {'Components': Login}
         }
         },
+        computed: {
+  },
     components:
     {
-        // Login,
+        Login,SignUp
     }
 }
 </script>
@@ -77,11 +51,14 @@ export default {
 
 }
 
+#tab{
+  height: auto;
+}
 #loginCard{
-    background-color:aliceblue;
+    background-color:white;
     position:relative;
     width: 40%;
-    height: 70%;
+    height: 74%;
     margin: auto;
 
 }
