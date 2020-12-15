@@ -1,6 +1,8 @@
 package com.database.endingCredit.domain.user.mapper;
 
 
+import java.util.Optional;
+
 import com.database.endingCredit.domain.user.dto.SignUpDTO;
 import com.database.endingCredit.domain.user.entity.Customers;
 
@@ -18,4 +20,6 @@ public interface CustomerMapper {
     CustomerMapper Instance = Mappers.getMapper(CustomerMapper.class);
 
     Customers toCustomerEntity(SignUpDTO signUpDTO, String customerId);
+
+    SignUpDTO toSignUpDTO(Optional<Customers> customers);
 }
