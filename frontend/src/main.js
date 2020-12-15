@@ -5,8 +5,11 @@ import splitPane from 'vue-splitpane'
 import VueRouter from 'vue-router';
 import router from './router/page_index.js'
 import Carousel3d from 'vue-carousel-3d';
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-
+Vue.use(BootstrapVue);
 Vue.use(VueRouter); // router 기능 확장 선언
 Vue.use(Carousel3d);
 

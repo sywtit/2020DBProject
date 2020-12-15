@@ -24,7 +24,7 @@
         <v-list-item-group
           v-model="group"
         >
-          <v-list-item>
+          <v-list-item  v-on:click="MyCinema">
             <v-list-item-title>My Cinema</v-list-item-title>
           </v-list-item>
 
@@ -32,7 +32,7 @@
             <v-list-item-title>Movie Rental Shop</v-list-item-title>
           </v-list-item>
 
-          <v-list-item>
+          <v-list-item v-on:click="MyAccount">
             <v-list-item-title>My Account</v-list-item-title>
           </v-list-item>
         </v-list-item-group>
@@ -85,6 +85,15 @@ export default {
         this.drawer = false
       },
     },
+  methods:{
+    MyAccount: function (){
+         this.$router.push('/myAccount')
+     },
+    MyCinema: function(){
+      this.$router.push('/myCinema')
+    }
+
+  }
 }
 </script>
 
