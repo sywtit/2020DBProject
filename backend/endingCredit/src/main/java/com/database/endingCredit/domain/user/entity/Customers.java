@@ -18,126 +18,127 @@ import lombok.NoArgsConstructor;
 public class Customers {
 
     @Id
-    private String CustomerId;
+    private String customerId;
 
-    private String LastName;
-    private String FirstName;
-    private String Email;
-    private String PhoneNum;
-    private String CreditNum;
-    private String AccountType;
-    private String Password;
+    private String lastName;
+    private String firstName;
+    private String email;
+    private String phoneNum;
+    private String creditNum;
+    private String accountType;
+    private String password;
+
 
     /**
-     * @return String return the CustomerId
+     * @return String return the customerId
      */
     public String getCustomerId() {
-        return CustomerId;
+        return customerId;
     }
 
     /**
-     * @param CustomerId the CustomerId to set
+     * @param customerId the customerId to set
      */
-    public void setCustomerId(String CustomerId) {
-        this.CustomerId = CustomerId;
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 
     /**
-     * @return String return the LastName
+     * @return String return the lastName
      */
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     /**
-     * @param LastName the LastName to set
+     * @param lastName the lastName to set
      */
-    public void setLastName(String LastName) {
-        this.LastName = LastName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     /**
-     * @return String return the FirstName
+     * @return String return the firstName
      */
     public String getFirstName() {
-        return FirstName;
+        return firstName;
     }
 
     /**
-     * @param FirstName the FirstName to set
+     * @param firstName the firstName to set
      */
-    public void setFirstName(String FirstName) {
-        this.FirstName = FirstName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     /**
-     * @return String return the Email
+     * @return String return the email
      */
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     /**
-     * @param Email the Email to set
+     * @param email the email to set
      */
-    public void setEmail(String Email) {
-        this.Email = Email;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     /**
-     * @return String return the PhoneNum
+     * @return String return the phoneNum
      */
     public String getPhoneNum() {
-        return PhoneNum;
+        return phoneNum;
     }
 
     /**
-     * @param PhoneNum the PhoneNum to set
+     * @param phoneNum the phoneNum to set
      */
-    public void setPhoneNum(String PhoneNum) {
-        this.PhoneNum = PhoneNum;
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
     }
 
     /**
-     * @return String return the CreditNum
+     * @return String return the creditNum
      */
     public String getCreditNum() {
-        return CreditNum;
+        return creditNum;
     }
 
     /**
-     * @param CreditNum the CreditNum to set
+     * @param creditNum the creditNum to set
      */
-    public void setCreditNum(String CreditNum) {
-        this.CreditNum = CreditNum;
+    public void setCreditNum(String creditNum) {
+        this.creditNum = creditNum;
     }
 
     /**
-     * @return String return the AccountType
+     * @return String return the accountType
      */
     public String getAccountType() {
-        return AccountType;
+        return accountType;
     }
 
     /**
-     * @param AccountType the AccountType to set
+     * @param accountType the accountType to set
      */
-    public void setAccountType(String AccountType) {
-        this.AccountType = AccountType;
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
     }
 
     /**
-     * @return String return the Password
+     * @return String return the password
      */
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     /**
-     * @param Password the Password to set
+     * @param password the password to set
      */
-    public void setPassword(String Password) {
-        this.Password = Password;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
 }

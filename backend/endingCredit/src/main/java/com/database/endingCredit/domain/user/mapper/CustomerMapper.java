@@ -17,5 +17,5 @@ public interface CustomerMapper {
     
     CustomerMapper Instance = Mappers.getMapper(CustomerMapper.class);
 
-    Customers toCustomerEntity(SignUpDTO signUpDTO, String CustomerId);
+    Customers toCustomerEntity(SignUpDTO signUpDTO, String customerId);
 }

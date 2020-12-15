@@ -23,12 +23,11 @@ public class Accounts {
     @EmbeddedId
     private AccountsIdentity accountsIdentity;
 
-    private String CustomerId;
-    private String AccountType;
+    private String customerId;
+    private String accountType;
 
     @GeneratedValue
-    private LocalDateTime AcctCreateDate;
-    
+    private LocalDateTime acctCreateDate;
 
 
     /**
@@ -46,45 +45,45 @@ public class Accounts {
     }
 
     /**
-     * @return String return the CustomerId
+     * @return String return the customerId
      */
     public String getCustomerId() {
-        return CustomerId;
+        return customerId;
     }
 
     /**
-     * @param CustomerId the CustomerId to set
+     * @param customerId the customerId to set
      */
-    public void setCustomerId(String CustomerId) {
-        this.CustomerId = CustomerId;
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 
     /**
-     * @return String return the AccountType
+     * @return String return the accountType
      */
     public String getAccountType() {
-        return AccountType;
+        return accountType;
     }
 
     /**
-     * @param AccountType the AccountType to set
+     * @param accountType the accountType to set
      */
-    public void setAccountType(String AccountType) {
-        this.AccountType = AccountType;
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
     }
 
     /**
-     * @return LocalDateTime return the AcctCreateDate
+     * @return LocalDateTime return the acctCreateDate
      */
     public LocalDateTime getAcctCreateDate() {
-        return AcctCreateDate;
+        return acctCreateDate;
     }
 
     /**
-     * @param AcctCreateDate the AcctCreateDate to set
+     * @param acctCreateDate the acctCreateDate to set
      */
-    public void setAcctCreateDate(LocalDateTime AcctCreateDate) {
-        this.AcctCreateDate = AcctCreateDate;
+    public void setAcctCreateDate(LocalDateTime acctCreateDate) {
+        this.acctCreateDate = acctCreateDate;
     }
 
 }

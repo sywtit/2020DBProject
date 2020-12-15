@@ -1,5 +1,6 @@
 package com.database.endingCredit.domain.user.controller;
 
+import com.database.endingCredit.domain.user.dto.LoginDTO;
 import com.database.endingCredit.domain.user.dto.SignUpDTO;
 import com.database.endingCredit.domain.user.service.SessionService;
 
@@ -30,8 +31,7 @@ public class SessionController {
     @CrossOrigin(origins = "*")
     @PostMapping("/account/auth")
     @ResponseStatus(value = HttpStatus.OK)
-    public String giveUserId(@RequestBody SignUpDTO signUpDTO) {
-        service.saveUser(signUpDTO);
-        return null;
+    public String giveUserId(@RequestBody LoginDTO loginDTO) {
+        return service.getUserId(loginDTO);
     }
 }

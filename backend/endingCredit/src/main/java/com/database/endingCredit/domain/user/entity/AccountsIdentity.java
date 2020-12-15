@@ -10,36 +10,36 @@ import javax.persistence.ManyToOne;
 @Embeddable
 public class AccountsIdentity implements Serializable{
     
-    private int AccountId;
-    private int MovieId;
+    private int accountId;
+    private int movieId;
 
 
     /**
-     * @return int return the AccountId
+     * @return int return the accountId
      */
     public int getAccountId() {
-        return AccountId;
+        return accountId;
     }
 
     /**
-     * @param AccountId the AccountId to set
+     * @param accountId the accountId to set
      */
-    public void setAccountId(int AccountId) {
-        this.AccountId = AccountId;
+    public void setAccountId(int accountId) {
+        this.accountId = accountId;
     }
 
     /**
-     * @return int return the MovieId
+     * @return int return the movieId
      */
     public int getMovieId() {
-        return MovieId;
+        return movieId;
     }
 
     /**
-     * @param MovieId the MovieId to set
+     * @param movieId the movieId to set
      */
-    public void setMovieId(int MovieId) {
-        this.MovieId = MovieId;
+    public void setMovieId(int movieId) {
+        this.movieId = movieId;
     }
 
 }

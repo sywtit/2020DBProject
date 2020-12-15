@@ -1,5 +1,6 @@
 package com.database.endingCredit.domain.user.service;
 
+import com.database.endingCredit.domain.user.dto.LoginDTO;
 import com.database.endingCredit.domain.user.dto.SignUpDTO;
 import com.database.endingCredit.domain.user.entity.Customers;
 import com.database.endingCredit.domain.user.mapper.CustomerMapper;
@@ -35,6 +36,11 @@ public class SessionService {
         customer = CustomerMapper.Instance.toCustomerEntity(signUpDTO,newCustomerId);
         customerRepository.save(customers);
 
+	}
+
+	public String getUserId(LoginDTO loginDTO) {
+        Customers customer = customerRepository.findByEmail(loginDTO.getEmail());
+        return customer.getCustomerId();
 	}
     
 }
