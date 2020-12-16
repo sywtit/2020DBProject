@@ -62,7 +62,6 @@ export default {
   created: function()
   {
     window.addEventListener('scroll', this.move);
-    localStorage.setItem('userId', 444-44-4444);
 
   },
   destroyed: function()

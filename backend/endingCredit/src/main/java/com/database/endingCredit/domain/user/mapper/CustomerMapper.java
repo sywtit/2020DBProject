@@ -21,5 +21,5 @@ public interface CustomerMapper {
 
     Customers toCustomerEntity(SignUpDTO signUpDTO, String customerId);
 
-    SignUpDTO toSignUpDTO(Optional<Customers> customers);
+    SignUpDTO toSignUpDTO(Customers customers);
 }

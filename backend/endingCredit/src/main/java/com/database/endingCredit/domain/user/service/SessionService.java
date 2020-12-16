@@ -34,7 +34,7 @@ public class SessionService {
         Customers customer = new Customers();
         // save to customers databse
         customer = CustomerMapper.Instance.toCustomerEntity(signUpDTO,newCustomerId);
-        customerRepository.save(customers);
+        customerRepository.save(customer);
 
 	}
 

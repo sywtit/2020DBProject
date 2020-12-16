@@ -4,7 +4,7 @@
         <h2 class="my-3"
             contain
             id = "mainText2">
-            Todays Movies for you
+            Best Seller
         </h2>
 
         <Suggestion/>
@@ -15,54 +15,6 @@
             id = "mainText2">
             Movie List
         </h2>
- <section id="search">
-        <v-toolbar
-          dark
-          color="transparent"
-          class="mb-1"
-        >
-         <v-text-field
-            id="searchText"
-            v-model="text"
-            clearable
-            flat
-            solo-inverted
-            hide-details
-            prepend-inner-icon="mdi-magnify"
-            label="Search"
-          ></v-text-field>
-          <template v-if="$vuetify.breakpoint.mdAndUp">
-            <v-spacer></v-spacer>
-            <v-select
-              id="selectText"
-              v-model="sortBy"
-              flat
-              solo-inverted
-              hide-details
-              :items="keys"
-              prepend-inner-icon="mdi-magnify"
-              label="Sort by"
-            ></v-select>
-           <v-spacer></v-spacer>
-            <v-btn>
-              SEARCH
-            </v-btn>
-          </template>
-        </v-toolbar>
-          <div class="mt-2">Value: {{ text }}</div>
-          <v-chip
-            close-icon="mdi-close-outline"
-            color="orange"
-            outlined
-            link
-          >Drama</v-chip>
-           <v-chip
-            close-icon="mdi-close-outline"
-            color="orange"
-            outlined
-            link
-          >Comedy</v-chip>
-        </section>
         <MovieList/>
          <v-btn flat id="buttonRight"
          color="transparent"
@@ -77,6 +29,7 @@
 <script>
 import Suggestion from '../components/MovieRentalShop/Suggestion'
 import MovieList from '../components/MovieRentalShop/MovieList'
+import axios from "axios"
 
 // if (location.href.indexOf('#reload') == -1)
 //   location.href += '#reload'
@@ -91,12 +44,9 @@ export default {
     name: 'MovieRentalShopPage',
     data() {
       return {
-        text: '',
-        sortBy: 'name',
-        keys: [
-          'movie name',
-          'actors'
-        ],
+        resData: {},
+            wholeMovieList: [],
+            bestSellerList: []
       }
     },
     components:{
@@ -108,10 +58,26 @@ export default {
          this.$router.push('/Home')
      }
     },
-    // beforeMount(){
-    //   this.$nextTick(function () {
-    //   location.reload();     
-    // })
+    created(){
+      var userData = {
+            customerId : localStorage.getItem("userId")
+          }
+          axios
+                .post('http://localhost:5000/api/rentalShop/blob', userData)
+                .then(res => {
+                    console.log('성공' + res.data);
+                    this.resData = res.data;
+                    console.log(this.resData);
+                    this.wholeMovieList = this.resData.wholeMovieList;
+                    this.bestSellerList = this.resData.bestSellerList;
+                    localStorage.setItem("wholeMovieList", JSON.stringify(this.wholeMovieList));
+                    localStorage.setItem("bestSellerList", JSON.stringify(this.bestSellerList));
+                })
+                .catch((err) => {
+                    console.log(err)
+                    alert('post 요청 실패' + userData)
+                });
+    }
     
       
 }
@@ -166,12 +132,6 @@ background-image: linear-gradient(to bottom, #353535, #313131, #2d2c2d, #292829,
   height: 1000px;
 }
 
-#search{
-  margin:20px;
-  width: 55%;
-  position: relative;
-  left: 25%;
-}
 
 ::-webkit-scrollbar {
   width: 6px;

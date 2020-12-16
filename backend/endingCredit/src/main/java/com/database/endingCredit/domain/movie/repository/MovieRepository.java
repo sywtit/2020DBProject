@@ -13,6 +13,7 @@ import com.database.endingCredit.domain.movie.entity.Movies;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Repository;
 
 //entity, primary key
@@ -39,10 +40,10 @@ public interface MovieRepository extends JpaRepository<Movies, Integer>{
     ") ORDER BY od1.rentalDate", nativeQuery = true)
 	List<MovieQueueDTO> getMovieQueue(@Param("customerId") String customerId);
 
-    @Query(value="SELECT  M.movieId, M.movieName, M.NOF, M.rating FROM movies AS M WHERE M.movieType = :movieType", nativeQuery = true)
+    @Query(value="SELECT  M.movieId, M.movieName, M.movieType, M.rating FROM movies AS M WHERE M.movieType = :movieType", nativeQuery = true)
 	List<RentalMovieDTO> findByType(@Param("movieType") String movieType);
 
-    @Query(value = "SELECT  M.movieId, M.movieName, M.NOF, M.rating FROM movies AS M WHERE M.movieName "+
+    @Query(value = "SELECT  M.movieId, M.movieName, M.movieType, M.rating FROM movies AS M WHERE M.movieName "+
     "COLLATE UTF8_GENERAL_CI LIKE %:movieName%", nativeQuery = true)
 	List<RentalMovieDTO> findByName(@Param("movieName") String movieName);
 
@@ -64,11 +65,12 @@ public interface MovieRepository extends JpaRepository<Movies, Integer>{
 	List<MovieList> findAllList();
 
 
+    @Nullable
     @Query(value="SELECT COUNT(*) FROM orders AS od WHERE od.returnDate is not null GROUP BY movieId HAVING od.movieId = :movieId", nativeQuery = true)
-	int findPeopleNum(@Param("movieId") int movieId);
+	long findPeopleNum(@Param("movieId") int movieId);
 
-    @Query(value="SELECT m FROM movies AS m", nativeQuery = true)
-	Movies findByIds(int movieId);
+    @Query(value="SELECT * FROM movies AS m WHERE m.movieId = :movieId", nativeQuery = true)
+	Movies findByIds(@Param("movieId") int movieId);
     
     
 }

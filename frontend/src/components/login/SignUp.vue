@@ -5,28 +5,29 @@
             cols="12"
             sm="6"
           >
-          <v-text-field v-model="identity" label="lastname">
+          <v-text-field v-model="lastName" label="lastname">
                     </v-text-field>
             </v-col>
              <v-col
             cols="12"
             sm="6"
           >
-                     <v-text-field v-model="identity" label="firstname">
+                     <v-text-field v-model="firstName" label="firstname">
                     </v-text-field>
              </v-col>
         </v-row>
-                    <v-text-field v-model="identity" label="email" type="email">
+                    <v-text-field v-model="email" label="email" type="email">
                     </v-text-field>
-                    <v-text-field v-model="password" label="phone-number">
+                    <v-text-field v-model="phoneNum" label="phone-number">
                     </v-text-field>
-                    <v-text-field v-model="password" label="credit-number">
+                    <v-text-field v-model="creditNum" label="credit-number">
                     </v-text-field>
                     <v-text-field v-model="password" label="password" type="password">
                     </v-text-field>
                     <v-select
                      :items="items"
                      label="Standard"
+                     v-model="accountType"
                   ></v-select>
                     <v-btn class="black white--text" depressed block large 
                     @click="signup">
@@ -53,17 +54,21 @@
 </template>
 
 <script>
+import axios from "axios"
+
 export default {
     name: 'SignUp',
     data () {
         return { 
-           items: ['Primary', 'Original'],
+           items: ['umlimited', 'limited'],
             user : {
-                firstname:'',
-                lastname:'',
+                lastName:'',
+                firstName:'',
                 email:'',
+                phoneNum:'',
+                creditNum:'',
                 password:'',
-                passwordChck:''
+                accountType:''
             },
             snackbar: false,
             text: 'Success Sign Up',
@@ -72,7 +77,32 @@ export default {
     },
     methods:{
        signup: function(){
-          this.snackbar = true
+          var userDate = {
+                lastName:this.lastName,
+                firstName:this.firstName,
+                email:this.email,
+                phoneNum:this.phoneNum,
+                creditNum:this.creditNum,
+                password:this.password,
+                accountType:this.accountType
+          }
+          axios
+                .post('http://localhost:5000/api/user/account/signup', userDate)
+                .then(res => {
+                    console.log('성공' + res)
+                    this.snackbar = true;
+                    this.lastName = '';
+                    this.firstName='';
+                    this.email='';
+                    this.phoneNum='';
+                    this.creditNum = '';
+                    this.password = '';
+                    this.accountType ='';
+                })
+                .catch((err) => {
+                    console.log(err)
+                    alert('post 요청 실패' + userDate)
+                });
        }
     }
 }

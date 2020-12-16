@@ -62,12 +62,12 @@ public class MovieRentalShopService {
 
 	public void giveMovieRates(MovieRatingDTO movieRatingDTO) {
 
-        int peoplenum = 0, rating = 0;
+        long peoplenum = 0; int rating = 0;
         peoplenum = movieRepository.findPeopleNum(movieRatingDTO.getMovieId());
         Movies movie = movieRepository.findByIds(movieRatingDTO.getMovieId());
         rating = movie.getRating();
 
-        int newRate = ((peoplenum*rating)+movieRatingDTO.getRating())/(peoplenum+1);
+        int newRate = (((int)peoplenum*rating)+movieRatingDTO.getRating())/((int)peoplenum+1);
         movie.setRating(newRate);
         movieRepository.save(movie);
         

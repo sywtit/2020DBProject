@@ -19,7 +19,7 @@ public class AccountService {
 
     public SignUpDTO getinfo(UserIdDTO userIdDTO) {
 
-        Optional<Customers> customers = customerRepository.findById(userIdDTO.getCustomerId());
+        Customers customers = customerRepository.findByCustomerId(userIdDTO.getCustomerId());
         SignUpDTO signUpDTO = CustomerMapper.Instance.toSignUpDTO(customers);
 		return signUpDTO;
 	}

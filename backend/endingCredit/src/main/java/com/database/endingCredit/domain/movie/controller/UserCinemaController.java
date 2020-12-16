@@ -24,6 +24,7 @@ public class UserCinemaController {
     @PostMapping("/cinema")
     @ResponseStatus(value = HttpStatus.OK)
     public UserCinemaDTO getWholeCinemaList(@RequestBody UserIdDTO userIdDTO) {
+        System.out.println(userIdDTO.getCustomerId());
         return service.getInfoList(userIdDTO);
     }
 }

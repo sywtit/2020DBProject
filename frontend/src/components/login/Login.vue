@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import axios from "axios"
+
 export default {
     name: 'Login'
     ,
@@ -22,7 +24,22 @@ export default {
     }),
     methods:{
         login: function(){
-            this.$router.push('/Home');
+        var userData = {
+                email:this.email
+          }
+          axios
+                .post('http://localhost:5000/api/user/account/auth', userData)
+                .then(res => {
+                    console.log('성공' + res.data)
+                    this.email = '';
+                    this.password = '';
+                    localStorage.setItem('userId', res.data);
+                    this.$router.push('/Home');
+                })
+                .catch((err) => {
+                    console.log(err)
+                    alert('post 요청 실패' + userData)
+                });
         }
     }
 }
