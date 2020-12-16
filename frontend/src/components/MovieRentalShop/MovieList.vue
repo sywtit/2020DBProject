@@ -212,9 +212,9 @@ export default {
             this.actorDatas = this.text.split(',');
             if(this.actorDatas.length == 1)
             {
-                var actorData = {
+                var actorData = [{
                     actorName : this.actorDatas[0]
-                }
+                }]
                 axios
                 .post('http://localhost:5000/api/rentalShop/byActors', actorData)
                 .then(res => {

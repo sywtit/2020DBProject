@@ -95,7 +95,7 @@
             </template>
             <v-card>
         <v-card-title class="headline">
-          Rate! (Return really not functioning)
+          Rate This Movie
         </v-card-title>
           <v-rating
               id="newrate"
@@ -204,6 +204,7 @@ export default {
                 .post('http://localhost:5000/api/rentalShop/rate', rateData)
                 .then(res => {
                     console.log('성공' + res.data);
+                    location.reload();
                 })
                 .catch((err) => {
                     console.log(err)
