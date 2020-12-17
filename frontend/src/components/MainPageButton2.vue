@@ -1,7 +1,8 @@
 <template>
 <section id="rental-section">
       <v-btn flat id="buttonRight"
-         color="transparent">
+         color="transparent"
+         v-on:click="MovieRentalShopLink">
          Movies
          <br>
          Rental Shop
@@ -22,6 +23,11 @@
     props:
     {
        scrollValue : Number
+    },
+    methods:{
+      MovieRentalShopLink: function (){
+         this.$router.push('/movieRentalShop');
+     }
     },
      watch: {
 

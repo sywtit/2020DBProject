@@ -9,8 +9,14 @@
   },
   "dependencies": {
     "axios": "^0.21.0",
+    "bootstrap": "^4.5.3",
+    "bootstrap-vue": "^2.20.1",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11",
+    "swiper": "^6.4.1",
+    "vue": "^2.6.12",
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-carousel-3d": "^1.0.1",
+    "vue-router": "^3.4.9",
     "vue-splitpane": "^1.0.6",
     "vuetify": "^2.2.11"
   },
