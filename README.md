@@ -1,7 +1,7 @@
 # 2020DBProject
 ending_credit - mysql학습용 영화 렌트 웹사이트
 
-**java언어를 이용해 SQL statement 작성 in Repository with jpa** 
+<u>java언어를 이용해 SQL statement 작성 in Repository with jpa</u>
 
 ### Final E/R Diagram
 -----
